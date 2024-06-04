@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage('Check') {
             steps {
                 git 'https://github.com/faticoco/simple-reactjs-app-master.git'
             }
