@@ -10,7 +10,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
@@ -45,8 +45,8 @@ pipeline {
     post {
         always {
             echo 'Cleaning up...'
-            sh 'docker rm -f simple-reactjs-app || true'
-            sh 'docker rmi fatima71459/simple-reactjs-app:${env.BUILD_ID} || true'
+            bat 'docker rm -f simple-reactjs-app || true'
+            bat 'docker rmi fatima71459/simple-reactjs-app:${env.BUILD_ID} || true'
         }
     }
 }
